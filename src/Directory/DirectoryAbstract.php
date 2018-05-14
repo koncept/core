@@ -16,6 +16,8 @@ use Strict\Property\Utility\AutoProperty;
  * @since v1.0.0
  *
  * @property-read string $path
+ *
+ * @internal
  */
 abstract class DirectoryAbstract
 {
@@ -31,7 +33,7 @@ abstract class DirectoryAbstract
      */
     public function __construct(string $path)
     {
-        $this->basePath = $path;
+        $this->basePath = rtrim($path, '/\\');
     }
 
     /**
